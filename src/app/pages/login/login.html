@@ -1,0 +1,24 @@
+<main class="w-full h-full min-h-screen grid items-center grid-cols-1 justify-center">
+  <section class="w-full p-2 rounded-md max-w-md bg-raisin-black min-h-130 overflow-y-auto ml-auto mr-2">
+    <h1 class="text-[2.4rem] text-vanilla font-bold pb-2 border-b-1">Entrar na conta</h1>
+    <form class="w-full flex text-xl flex-col gap-3 mt-2 h-full p-1 text-vanilla mx-auto">
+      <fieldset>
+        <div class="relative mb-4 flex gap-2 items-center flex-wrap w-full max-w-sm">
+          <label for="login">Credencial:</label>
+          <input type="text" placeholder="Nome de usuario ou E-mail" class="w-full p-1 bg-zinc-800 border-1 outline-transparent outline-2 focus:outline-rose-600 focus:border-transparent rounded-sm placeholder:text-sm" required />
+        </div>
+
+        <div class="relative mb-4 flex gap-2 items-center flex-wrap w-full max-w-sm">
+          <label for="senha">Senha:</label>
+          <input type="password" placeholder="****" class="w-full p-1 bg-zinc-800 border-1 outline-transparent outline-2 focus:outline-rose-600 focus:border-transparent rounded-sm" required />
+        </div>
+      </fieldset>
+
+      <fieldset class="mt-auto">
+        <div class="relative w-full flex items-center justify-center">
+          <button type="button" class="text-center transition-all hover:bg-amber-400! hover:translate-y-2 w-full mx-auto text-xl text-white rounded-full bg-persian-red px-1 py-2">Entrar</button>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+</main>
