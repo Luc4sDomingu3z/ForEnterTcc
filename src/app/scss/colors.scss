@@ -4,46 +4,51 @@ $verdigris: #7ebdc2ff;
 $vanilla: #f3dfa2ff;
 $linen: #efe6ddff;
 
-.bg-raisin-black {
-  background-color: $raisin-black;
-}
-.bg-persian-red {
-  background-color: $persian-red;
-}
+@layer components {
 
-.bg-verdigris {
-  background-color: $verdigris;
-}
 
-.bg-vanilla {
-  background-color: $vanilla;
-}
+  .bg-raisin-black {
+    background-color: $raisin-black;
+  }
 
-.bg-linen {
-  background-color: $linen;
-}
+  .bg-persian-red {
+    background-color: $persian-red;
+  }
 
-.text-raisin-black {
-  color: $raisin-black;
-  fill: $raisin-black;
-}
+  .bg-verdigris {
+    background-color: $verdigris;
+  }
 
-.text-persian-red {
-  color: $persian-red;
-  fill: $persian-red;
-}
+  .bg-vanilla {
+    background-color: $vanilla;
+  }
 
-.text-verdigris {
-  color: $verdigris;
-  fill: $verdigris;
-}
+  .bg-linen {
+    background-color: $linen;
+  }
 
-.text-vanilla {
-  color: $vanilla;
-  fill: $vanilla;
-}
+  .text-raisin-black {
+    color: $raisin-black;
+    fill: $raisin-black;
+  }
 
-.text-linen {
-  color: $linen;
-  fill: $linen;
+  .text-persian-red {
+    color: $persian-red;
+    fill: $persian-red;
+  }
+
+  .text-verdigris {
+    color: $verdigris;
+    fill: $verdigris;
+  }
+
+  .text-vanilla {
+    color: $vanilla;
+    fill: $vanilla;
+  }
+
+  .text-linen {
+    color: $linen;
+    fill: $linen;
+  }
 }

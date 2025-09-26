@@ -1,0 +1,25 @@
+<header class="w-full text-white bg-raisin-black">
+  <section class="flex flex-row max-w-lg px-1 mx-auto justify-between items-center py-2">
+    <div id="logo">
+      <span class="block text-2xl">Logo</span>
+    </div>
+    <nav class="relative">
+      <button type="button"
+        class="lg:hidden transition-all hover:bg-white hover:text-black cursor-pointer rounded-md border aspect-square w-10 flex items-center justify-center rotate-90 text-center">|||</button>
+      <ul
+        class="flex flex-col absolute right-0 w-50 max-w-80 bg-raisin-black p-1 lg:p-0 rounded-sm border-1 border-gray-300 translate-y-5 lg:translate-none lg:border-none lg:rounded-none lg:max-w-max lg:w-max lg:flex-row lg:static">
+        <li>
+          <a routerLink="" class="transition-all hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Home</a>
+        </li>
+        <li>
+          <a routerLink="profile"
+            class="transition-all hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Profile</a>
+        </li>
+        <li>
+          <a routerLink="logout"
+            class="transition-all hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</header>
