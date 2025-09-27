@@ -1,13 +1,45 @@
-<main class="w-full h-full max-h-screen">
-  <section class="w-full mx-auto bg-raisin-black aspect-video" aria-label="Hero section">
-    <article class="p-1 pt-5" aria-label="Hero container">
-      <h1 class="text-5xl text-white p-2">Disciplina Financeira é um direito de todos!</h1>
-      <section class="flex flex-row gap-2 w-full h-full">
-        <div class="text-vanilla p-2 max-w-max" aria-label="">
-          <p>Torne </p>
+<main class="w-full h-full">
+  <section class="w-full mx-auto bg-raisin-black aspect-video lg:min-h-130 lg:aspect-auto" aria-label="Hero section">
+    <article class="p-1 pt-5 max-w-4xl w-full mx-auto" aria-label="Hero container">
+      <h1 class="text-5xl p-2 font-bold text-linen">Disciplina Financeira é um direito de todos!</h1>
+      <section class="flex w-full mt-5 flex-row flex-wrap md:flex-nowrap gap-2 h-full">
+        <div class="text-slate-300 p-2 max-w-max text-2xl" aria-label="">
+          <p class="mb-3">Aqui é mais fácil organizar suas pendências</p>
+          <p class="font-lighter">E preparar seu dinheiro para o futuro.</p>
         </div>
-        <div class="h-full rounded-md p-2 bg-persian-red" aria-label="Area da imagem">
+        <div class="h-full max-w-80 lg:max-w-lg mx-auto w-full p-2 select-none" aria-label="Area da imagem">
+          <img src="imgs/mockup-removebg-preview.png" class="drop-shadow-xl select-none drop-shadow-gray-800" alt="Imagem Hero">
+        </div>
+      </section>
+      <div class="w-full mt-5 py-3">
+        <a href="#intro-teste" class="mx-auto max-w-100 leading-8 transition-all ease-out hover:saturate-10 hover:max-w-70 uppercase font-bold text-center w-full p-1 px-2 flex items-center justify-center gap-2 rounded-full text-vanilla select-none bg-persian-red">
+          <span class="block">Conhecer agora</span>
+        </a>
+      </div>
+    </article>
+  </section>
 
+  <section class="w-full h-full mx-auto bg-linen min-h-200">
+    <article class="container mx-auto p-1 py-5">
+      <h1 id="intro-teste" class="text-5xl p-2 font-bold mb-3 text-slate-600">Explore funcionalidades</h1>
+
+      <section aria-label="Cards de intro" class="w-full flex gap-2 flex-wrap lg:flex-nowrap">
+        <article class="w-full p-2 border border-zinc-500 rounded-md overflow-y-auto">
+          <p>Texto explicativo</p>
+        </article>
+        <div class="flex *:transition-all *:border-1 *:border-zinc-500 w-full *:grow flex-wrap gap-x-2 gap-y-2 overflow-y-auto">
+          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+            <h2 class="text-2xl text-zinc-500 font-100 font-serif">Progressão de metas</h2>
+          </div>
+          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+            <h2 class="text-2xl text-zinc-500 font-100 font-serif">Privacidade</h2>
+          </div>
+          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+            <h2 class="text-2xl text-zinc-500 font-100 font-serif">Grupos & Chat</h2>
+          </div>
+          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+            <h2 class="text-2xl text-zinc-500 font-100 font-serif">Administração</h2>
+          </div>
         </div>
       </section>
     </article>

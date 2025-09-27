@@ -2,6 +2,24 @@
 @use 'tailwindcss';
 @use './app/scss/colors';
 
+* {
+  box-sizing: border-box;
+}
+html, body {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  appearance: none;
+  width: 6px;
+  background-color: colors.$raisin-black;
+}
+::-webkit-scrollbar-thumb {
+  appearance: none;
+  border-radius: 10px;
+  background-color: colors.$vanilla;
+}
+
 body {
   width: 100%;
   max-width: 100vw;
