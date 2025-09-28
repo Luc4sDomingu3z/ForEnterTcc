@@ -20,7 +20,11 @@ export class Home {
     if (el.dataset['funcoesSecao'] === undefined) return;
 
     const explications: { id: number; title: string; text: string }[] = [
-      { id: 0, title: 'Progressões de metas', text: 'Esteja ciente a todo tempo sobre o progresso de sua meta. Com auxílio de calendários interativos, você pode criar estimativas manualmente ou deixe que façamos isso por você.' },
+      {
+        id: 0,
+        title: 'Progressões de metas',
+        text: 'Esteja ciente a todo tempo sobre o progresso de sua meta. Com auxílio de calendários interativos, você pode criar estimativas manualmente ou deixe que façamos isso por você.',
+      },
       { id: 1, title: 'Privacidade', text: 'Texto' },
       { id: 2, title: 'Grupos & Chat', text: 'Texto 2' },
       { id: 3, title: 'Administração', text: 'Text 3' },
@@ -32,12 +36,24 @@ export class Home {
         if (text_area !== null) {
           text_area.innerHTML = `
             <h2 class='text-3xl text-zinc-600 font-bold font-serif mb-4'>${exp.title}</h2>
-            <p class='text-lg leading-8 font-serif indent-4 text-justify underline'>${exp.text}</p>
+            <p class='text-lg leading-8 indent-4 text-justify transition-all'>${exp.text}</p>
             `;
         }
       }
     }
 
+    const els = document.querySelectorAll(`[data-funcoes-secao]`);
+    if (els.length === 0) return;
 
+    el.classList.add('border-green-500!');
+    for (let otherEl of els) {
+      const otherDataset = otherEl.getAttribute('data-funcoes-secao');
+      if (
+        otherEl.classList.contains('border-green-500!') &&
+        Number(otherDataset) !== Number(el.dataset['funcoesSecao'])
+      ) {
+        otherEl.classList.remove('border-green-500!');
+      }
+    }
   }
 }
