@@ -24,20 +24,20 @@
       <h1 id="intro-teste" class="text-5xl p-2 font-bold mb-3 text-slate-600">Explore funcionalidades</h1>
 
       <section aria-label="Cards de intro" class="w-full flex gap-2 flex-wrap lg:flex-nowrap">
-        <article class="w-full p-2 border border-zinc-500 rounded-md overflow-y-auto">
+        <article class="w-full p-2 border border-zinc-500 rounded-md overflow-y-auto" id="text_area">
           <p>Texto explicativo</p>
         </article>
         <div class="flex *:transition-all *:border-1 *:border-zinc-500 w-full *:grow flex-wrap gap-x-2 gap-y-2 overflow-y-auto">
-          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+          <div data-funcoes-secao="0" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)="selectFuncao($event)">
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Progressão de metas</h2>
           </div>
-          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+          <div data-funcoes-secao="1" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)=selectFuncao($event)>
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Privacidade</h2>
           </div>
-          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+          <div data-funcoes-secao="2" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)=selectFuncao($event)>
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Grupos & Chat</h2>
           </div>
-          <div class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none">
+          <div data-funcoes-secao="3" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)=selectFuncao($event)>
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Administração</h2>
           </div>
         </div>
