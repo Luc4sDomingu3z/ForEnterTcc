@@ -1,12 +1,14 @@
 @theme {
-  --animate-fadein: fadein 600ms ease-out infinite;
+  --animate-fadein: fadein 1s ease-in-out infinite;
 
   @keyframes fadein {
-    0% {
-      opacity: 0 !important;
-    }
+    0%,
     100% {
-      opacity: 1 !important;
+      background-color: red;
+      display: none;
+    }
+    50% {
+      opacity: 1;
     }
   }
 
