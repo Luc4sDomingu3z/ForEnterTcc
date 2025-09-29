@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -38,6 +39,7 @@ export class Home {
             <h2 class='text-3xl text-zinc-600 font-bold font-serif mb-4'>${exp.title}</h2>
             <p class='text-lg leading-8 indent-4 text-justify transition-all'>${exp.text}</p>
             `;
+          window.scrollTo({top: text_area.scrollHeight + 200})
         }
       }
     }
