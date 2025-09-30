@@ -39,7 +39,7 @@ export class Home {
             <h2 class='text-3xl text-zinc-600 font-bold font-serif mb-4'>${exp.title}</h2>
             <p class='text-lg leading-8 indent-4 text-justify transition-all'>${exp.text}</p>
             `;
-          window.scrollTo({top: text_area.scrollHeight + 200})
+          window.scrollTo({top: text_area.scrollHeight + 900})
         }
       }
     }
