@@ -4,6 +4,13 @@
 @use './app/scss/animation';
 @import "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
 
+:root {
+  --vanilla: colors.$vanilla;
+  --persian-red: colors.$persian-red;
+  --raisin-black: colors.$raisin-black;
+  --linen: colors.$linen;
+  --verdigris: colors.$verdigris;
+}
 
 * {
   box-sizing: border-box;
