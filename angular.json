@@ -64,7 +64,10 @@
               "buildTarget": "meutcc-app:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "allowedHosts": true
+          }
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
