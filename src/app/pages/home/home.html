@@ -1,7 +1,7 @@
 <main class="w-full h-full max-w-[1920px] mx-auto">
   <section class="w-full mx-auto bg-raisin-black aspect-video lg:min-h-130 lg:aspect-auto" aria-label="Hero section">
     <article class="p-1 pt-5 max-w-4xl w-full mx-auto" aria-label="Hero container">
-      <h1 class="text-5xl p-2 font-bold text-linen">Disciplina Financeira é um direito de todos!</h1>
+      <h1 class="text-5xl p-2 font-bold text-linen">Disciplina Financeira é um direito de <strong class="uppercase mx-auto">todes!</strong></h1>
       <section class="flex w-full mt-5 flex-row flex-wrap md:flex-nowrap gap-2 h-full">
         <div class="text-slate-300 p-2 max-w-max text-2xl" aria-label="">
           <p class="mb-3">Aqui é mais fácil organizar suas pendências</p>
@@ -75,13 +75,13 @@
           <div data-funcoes-secao="0" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)="selectFuncao($event)">
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Progressão de metas</h2>
           </div>
-          <div data-funcoes-secao="1" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)=selectFuncao($event)>
+          <div data-funcoes-secao="1" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)="selectFuncao($event)">
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Privacidade</h2>
           </div>
-          <div data-funcoes-secao="2" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)=selectFuncao($event)>
+          <div data-funcoes-secao="2" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)="selectFuncao($event)">
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Grupos & Chat</h2>
           </div>
-          <div data-funcoes-secao="3" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)=selectFuncao($event)>
+          <div data-funcoes-secao="3" class="hover:bg-white rounded-md p-2 size-50 cursor-pointer select-none" (pointerup)="selectFuncao($event)">
             <h2 class="text-2xl text-zinc-500 font-100 font-serif">Administração</h2>
           </div>
         </div>
@@ -100,13 +100,13 @@
 
     <article class="container mx-auto p-1 py-4">
       <section class="text-white flex flex-row justify-center gap-4 *:basis-[300px] flex-wrap">
-        <div class="border border-rose-500 rounded-md p-3 w-full grid grid-cols-1 grid-rows-[max-content_1fr] shadow-sm h-full aspect-square">
-          <h2 class="text-persian-red font-thin text-2xl flex gap-2 items-center text-right w-full justify-end ml-auto p-1 rounded-md border-1">
+        <div class="bg-white rounded-md p-3 w-full grid grid-cols-1 grid-rows-[max-content_1fr] shadow-sm h-full aspect-square">
+          <h2 class="text-persian-red font-thin text-2xl flex gap-2 items-center text-center w-full justify-center ml-auto p-1 rounded-md">
             <span class="block translate-y-0.5">Crie uma meta</span>
             <span class="material-symbols-rounded" style="font-size: 26pt;">ink_pen</span>
           </h2>
           <div class="w-full text-slate-500 pt-3 grid grid-cols-1 grid-rows-[1fr_max-content]">
-            <div class="*:underline *:underline-offset-2 *:decoration-dotted text-lg text-center">
+            <div class="text-lg text-center">
               <p>Inicie o seu primeiro registro de meta</p>
             </div>
             <div class="size-20 mr-auto translate-y-1/2">
@@ -116,13 +116,13 @@
             </div>
           </div>
         </div>
-        <div class="border border-rose-500 rounded-md p-3 w-full grid grid-cols-1 grid-rows-[max-content_1fr] shadow-sm h-full aspect-square">
-          <h2 class="text-persian-red font-thin text-2xl flex items-center gap-2 justify-end text-right w-full max-w-full ml-auto p-1 border rounded-md">
+        <div class="bg-white rounded-md p-3 w-full grid grid-cols-1 grid-rows-[max-content_1fr] shadow-sm h-full aspect-square">
+          <h2 class="text-persian-red font-thin text-2xl flex items-center gap-2 justify-end text-right w-full max-w-full ml-auto p-1 rounded-md">
             <span class="block translate-y-0.5">Meta compartilhada</span>
             <span class="material-symbols-rounded" style="font-size: 26pt;">graph_3</span>
           </h2>
           <div class="w-full text-slate-500 pt-3 grid grid-cols-1 grid-rows-[1fr_max-content]">
-            <div class="*:underline *:underline-offset-2 *:decoration-dotted text-lg text-center">
+            <div class="text-lg text-center">
               <p>Crie metas ou adicione outros usuários para ajudar na sua meta.</p>
             </div>
             <div class="size-20 mr-auto translate-y-1/2">
@@ -132,13 +132,13 @@
             </div>
           </div>
         </div>
-        <div class="border border-rose-500 rounded-md p-3 w-full grid grid-cols-1 grid-rows-[max-content_1fr] shadow-sm h-full aspect-square">
-          <h2 class="text-persian-red font-thin flex items-center gap-2 justify-end text-2xl text-right w-full ml-auto p-1 rounded-md border">
-            <span class="block translate-y-0.5">Configurações</span>
+        <div class="bg-white rounded-md p-3 w-full grid grid-cols-1 grid-rows-[max-content_1fr] shadow-sm h-full aspect-square">
+          <h2 class="text-persian-red font-thin flex items-center gap-2 justify-center text-2xl text-right w-full ml-auto p-1 rounded-md">
+            <span class="block">Configurações</span>
             <span class="material-symbols-rounded" style="font-size: 26pt;">settings</span>
           </h2>
           <div class="w-full text-slate-500 pt-3 grid grid-cols-1 grid-rows-[1fr_max-content]">
-            <div class="*:underline *:underline-offset-2 *:decoration-dotted text-lg text-center">
+            <div class="text-lg text-center">
               <p>Tenha controle absoluto sobre a privacidade das suas metas.</p>
             </div>
             <div class="size-20 mr-auto translate-y-1/2">
@@ -149,12 +149,12 @@
           </div>
         </div>
         <div class="bg-white rounded-md p-3 w-full grid grid-cols-1 grid-rows-[max-content_1fr] shadow-sm h-full aspect-square">
-          <h2 class="text-persian-red font-thin text-2xl text-right w-full ml-auto p-1 rounded-md flex items-center justify-end">
-            <span class="block translate-y-0.5">Ver todas as metas</span>
+          <h2 class="text-persian-red font-thin text-2xl text-right w-full ml-auto p-1 rounded-md flex gap-2 items-center justify-center">
+            <span class="block">Ver todas as metas</span>
             <span class="material-symbols-rounded" style="font-size: 26pt;">table</span>
           </h2>
           <div class="w-full text-slate-500 grid pt-3 grid-cols-1 grid-rows-[1fr_max-content]">
-            <div class="*:underline *:underline-offset-2 *:decoration-dotted text-lg text-center">
+            <div class="text-lg text-center pb-2">
               <p>Consulte seu histórico de metas criadas.</p>
             </div>
             <div class="size-20 mr-auto translate-y-1/2">
