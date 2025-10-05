@@ -1,0 +1,26 @@
+<main class="w-full h-full max-w-[1920px] mx-auto">
+  <section class="grid grid-rows-[1fr_auto] lg:grid-rows-none lg:grid-cols-[auto_1fr] min-h-90 lg:min-h-200">
+    <app-navbar class="w-full h-full row-start-2 lg:row-start-1 lg:max-w-10 transition-all hover:max-w-40"></app-navbar>
+    <div aria-label="Content" class="container mx-auto p-1 py-2">
+      <h1 class="w-full text-left text-4xl md:text-5xl p-2 font-bold mb-3 text-slate-600">
+        Criação de meta
+      </h1>
+      <hr class="border-slate-400" />
+
+      <section class="rounded-md flex gap-2 mt-2 w-full mx-auto">
+        <form class="w-full max-w-5xl p-1" method="post">
+          <fieldset>
+            <div class="relative pt-2">
+              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full leading-6 ease-out p-1 rounded-md w-full border border-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800" required>
+              <label for="meta_name" class="transition-all ease-in text-2xl peer-focus:text-sm peer-valid:text-sm text-neutral-600 absolute left-1 top-3">Nomeiar meta</label>
+            </div>
+          </fieldset>
+        </form>
+
+        <div aria-label="Explicando utilizacao" class="bg-vanilla w-full max-w-xl p-2 rounded-md">
+          <h2 class="text-2xl font-thin font-mono text-verdigris">How to use</h2>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>

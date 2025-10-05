@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeDashboard } from './home-dashboard';
+import { NewmetaDashboard } from './newmeta-dashboard';
 
-describe('HomeDashboard', () => {
-  let component: HomeDashboard;
-  let fixture: ComponentFixture<HomeDashboard>;
+describe('NewmetaDashboard', () => {
+  let component: NewmetaDashboard;
+  let fixture: ComponentFixture<NewmetaDashboard>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeDashboard]
+      imports: [NewmetaDashboard]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeDashboard);
+    fixture = TestBed.createComponent(NewmetaDashboard);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

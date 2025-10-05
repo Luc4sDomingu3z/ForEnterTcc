@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { Login } from './pages/login/login';
 import { Home } from './pages/home/home';
-import { AppDashboard } from './dashboard/app-dashboard/app-dashboard';
 import { HomeDashboard } from './dashboard/home-dashboard/home-dashboard';
+import { NewmetaDashboard } from './dashboard/newmeta-dashboard/newmeta-dashboard';
 
 export const routes: Routes = [
   {
@@ -18,20 +18,16 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     title: 'Dashboard Inicio',
-    component: AppDashboard,
-    children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-        outlet: 'sec'
-      },
-      {
-        path: 'home',
-        title: 'Dashboar Pagina inicial',
-        component: HomeDashboard,
-        outlet: 'sec'
-      },
-    ],
+    component: HomeDashboard,
   },
+  {
+    path: 'dashboard/home',
+    pathMatch: 'full',
+    redirectTo: 'dashboard'
+  },
+  {
+    path: 'dashboard/new',
+    title: 'Nova meta',
+    component: NewmetaDashboard,
+  }
 ];
