@@ -11,8 +11,39 @@
         <form class="w-full max-w-5xl p-1" method="post">
           <fieldset>
             <div class="relative pt-2">
-              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full leading-6 ease-out p-1 rounded-md w-full border border-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800" required>
-              <label for="meta_name" class="transition-all ease-in text-2xl peer-focus:text-sm peer-valid:text-sm text-neutral-600 absolute left-1 top-3">Nomeiar meta</label>
+              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full leading-6 ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta_name" class="transition-all ease-in text-2xl peer-focus:text-sm peer-valid:text-sm text-neutral-600 absolute left-1 leading-0 top-5">Nomeiar meta</label>
+            </div>
+
+            <!-- <div class="relative pt-2">
+              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full leading-6 ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta_name" class="transition-all ease-in text-2xl peer-focus:text-sm peer-valid:text-sm text-neutral-600 absolute left-1 leading-0 top-5"></label>
+            </div> -->
+          </fieldset>
+
+          <fieldset class="flex gap-2 items-center mt-4" aria-label="Escolher tipo de meta">
+            <div aria-label="Dinheiro">
+              <label for="meta-type-cash" class="transition-all flex items-center gap-2 border-2 border-slate-500 p-1 peer-checked:border-amber-400 peer-checked:bg--400 peer-checked:text-white text-lg w-full max-w-max">
+                <input type="radio" name="meta-type" id="meta-type-cash" class="peer" hidden>
+                <span class="block">Dinheiro</span>
+                <div class="flex items-center hidden peer-has-checked:flex">
+                  <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
+                </div>
+              </label>
+            </div>
+            <div aria-label="Material">
+              <input type="radio" name="meta-type" id="meta-type-material" class="peer" hidden>
+              <label for="meta-type-material" class="transition-all flex items-center gap-2 border-2 border-slate-500 p-1 peer-checked:border-amber-400 peer-checked:bg-slate-400 peer-checked:text-white text-lg w-full max-w-max">
+                <span class="block">Material</span>
+                <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
+              </label>
+            </div>
+            <div aria-label="Fatura">
+              <input type="radio" name="meta-type" class="peer" id="meta-type-bill" hidden>
+              <label for="meta-type-bill" class="transition-all flex items-center gap-2 border-2 border-slate-500 p-1 peer-checked:bg-slate-400 peer-checked:text-white text-lg w-full max-w-max">
+                <span class="block">Fatura</span>
+                <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
+              </label>
             </div>
           </fieldset>
         </form>

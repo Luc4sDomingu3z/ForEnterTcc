@@ -57,5 +57,5 @@ export class Home {
         otherEl.classList.remove('border-green-500!');
       }
     }
-  }
+  } 
 }
