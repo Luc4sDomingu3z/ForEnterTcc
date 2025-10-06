@@ -26,9 +26,17 @@ export class Home {
         title: 'Progressões de metas',
         text: 'Esteja ciente a todo tempo sobre o progresso de sua meta. Com auxílio de calendários interativos, você pode criar estimativas manualmente ou deixe que façamos isso por você.',
       },
-      { id: 1, title: 'Privacidade', text: 'Texto' },
-      { id: 2, title: 'Grupos & Chat', text: 'Texto 2' },
-      { id: 3, title: 'Administração', text: 'Text 3' },
+      {
+        id: 1,
+        title: 'Privacidade',
+        text: 'Todas as suas metas são <strong>privadas</strong>. Com exceções de pessoas e/ou grupos que você escolher para permitir a visualização das informações das metas. Com as ferramentas certas, você pode filtrar o que os participantes podem ou não enxergar quando a meta está compartilhada.',
+      },
+      {
+        id: 2,
+        title: 'Grupos & Chat',
+        text: 'O projeto está direcionado a todo tipo de público, portanto, a comunicação é essencial nesses momentos que exigem bastante atenção. <strong>Grupos e chats</strong> são uma funcionalidade que permite essa interação. Convide usuários, como familiares, e os adicione às metas para organizar as dispesas em união.',
+      },
+      { id: 3, title: 'Administração', text: 'Você está no controle de tudo. Adicione e retire integrantes de um grupo quando quiser, verifique a datas planejadas, relatórios da entrada de valores de cada integrante, salve as informações na nuvem e no seu dispositivo. ' },
     ];
 
     for (let exp of explications) {
@@ -39,7 +47,10 @@ export class Home {
             <h2 class='text-3xl text-zinc-600 font-bold font-serif mb-4'>${exp.title}</h2>
             <p class='text-lg leading-8 indent-4 text-justify transition-all'>${exp.text}</p>
             `;
-          window.scrollTo({top: text_area.scrollHeight + 900})
+          text_area.scrollIntoView({
+            block: 'center',
+            behavior: 'smooth',
+          });
         }
       }
     }
@@ -57,5 +68,10 @@ export class Home {
         otherEl.classList.remove('border-green-500!');
       }
     }
-  } 
+  }
+
+  goInfinite(e: Event) {
+    console.log(e.currentTarget)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 }

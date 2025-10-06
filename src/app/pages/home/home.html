@@ -1,4 +1,7 @@
-<main class="w-full h-full max-w-[1920px] mx-auto">
+<main class="w-full h-full max-w-[1920px] mx-auto relative">
+  <button (click)="goInfinite($event)" class="fixed md:bottom-5 bottom-10 right-6 md:right-5 rounded-full bg-persian-red z-10 flex justify-center text-vanilla scale-220 cursor-pointer md:scale-200">
+    <span class="material-symbols-rounded" style="pointer-events: none; user-select: none;">arrow_drop_up</span>
+  </button>
   <section class="w-full mx-auto bg-raisin-black aspect-video lg:min-h-130 lg:aspect-auto" aria-label="Hero section">
     <article class="p-1 pt-5 max-w-4xl w-full mx-auto" aria-label="Hero container">
       <h1 class="text-5xl p-2 font-bold text-linen">Disciplina Financeira é um direito de <strong class="uppercase mx-auto">todos!</strong></h1>
@@ -30,19 +33,23 @@
             <span class="absolute p-1 h-2 border border-amber-500 rounded-full block bottom-0 w-10"></span>
           </h2>
           <div class="w-full mt-4 relative *:leading-8 *:indent-12 *:text-justify">
-            <p class="py-2 text-slate-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi laudantium in sequi aliquam ratione ipsum sit sapiente numquam tempora tempore, obcaecati tenetur enim harum hic recusandae, quam eius consectetur dolorem.</p>
+            <p class="py-2 text-slate-700">
+              Facilitar a organização financeira pessoal, permitindo que você crie metas específicas para
+              pagar faturas de cartões, comprar novos bens-materiais desejados ou atingir objetivos monetários.
+            </p>
             <span class="absolute h-2 border border-amber-500 rounded-full block bottom-0 w-10 right-0 p-1"></span>
           </div>
         </div>
 
         <div class="w-full mt-5 lg:p-5 p-1 lg:bg-[#f3dfa2ff] lg:rounded-md">
           <h2 class="relative text-3xl font-bold text-slate-500 font-serif py-2">
-            Propósito
+            A quem é direcionado?
             <span class="absolute p-1 h-2 border border-amber-500 rounded-full block bottom-0 w-10"></span>
           </h2>
           <div class="w-full mt-4 relative *:leading-8 *:indent-12 *:text-justify">
             <p class="py-2 text-neutral-900">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto non, vel vitae ab praesentium corrupti! Soluta modi ipsam asperiores labore iusto perferendis nisi ipsum, corporis ullam. Saepe, aliquid incidunt. Harum.
+              A priori, o direcionamento do projeto esta para qualquer faixa etária acima dos 16 anos. Não há nenhum tipo de restrição etária neste projeto,
+              a função é simples e direta, auxiliar nas dependências financeiras de qualquer indivíduo.
             </p>
             <span class="absolute h-2 border border-amber-500 rounded-full block bottom-0 w-10 right-0 p-1"></span>
           </div>
@@ -50,13 +57,14 @@
 
         <div class="w-full lg:p-5 p-1 mt-5">
           <h2 class="relative text-3xl font-bold text-slate-500 font-serif py-2">
-            Propósito
+            Segurança
             <span class="absolute p-1 h-2 border border-amber-500 rounded-full block bottom-0 w-10"></span>
           </h2>
         </div>
         <div class="w-full mt-4 relative *:leading-8 *:indent-12 *:text-justify">
           <p class="py-2 text-slate-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem harum veniam atque tenetur rerum quam. Exercitationem numquam officiis illum, sed ullam eum nihil? Autem omnis, dolor dicta optio id itaque!
+            O projeto não te requer nenhum dado pessoal (e sensível), apenas um e-mail válido para possibilitar o salvamento em nuvem. Porém, por livre arbitragem, também é possível
+            iniciar uma sessão de visita e salvar suas metas localmente e carregá-las em outro dispositivo ou conta.
           </p>
           <span class="absolute h-2 border border-amber-500 rounded-full block bottom-0 w-10 right-0 p-1"></span>
         </div>
