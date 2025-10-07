@@ -3,6 +3,7 @@ import { Login } from './pages/login/login';
 import { Home } from './pages/home/home';
 import { HomeDashboard } from './dashboard/home-dashboard/home-dashboard';
 import { NewmetaDashboard } from './dashboard/newmeta-dashboard/newmeta-dashboard';
+import { authGuard } from './guard/auth-guard';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,7 @@ export const routes: Routes = [
     path: 'dashboard',
     title: 'Dashboard Inicio',
     component: HomeDashboard,
+    canActivate: [authGuard]
   },
   {
     path: 'dashboard/home',

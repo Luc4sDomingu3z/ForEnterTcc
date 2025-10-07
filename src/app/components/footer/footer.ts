@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Imagens } from '../../services/imagens';
+// import { Imagens } from '../../services/imagens';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +10,7 @@ import { Imagens } from '../../services/imagens';
 })
 export class Footer {
 
-  constructor(private imagemService: Imagens) { }
+  // constructor(private imagemService: Imagens) { }
 
   privacyDialogEvent(e: PointerEvent) {
     e.preventDefault()

@@ -2,6 +2,9 @@
   <section class="flex flex-row max-w-xl px-1 mx-auto justify-between items-center py-2">
     <div id="logo">
       <span class="block text-2xl">Logo</span>
+      @if (user !== null) {
+        <span>{{user.user}}</span>
+      }
     </div>
     <nav class="relative">
       <button (pointerup)="headerNavToggle($event)" data-nav-toggled="false" type="button"
@@ -20,6 +23,7 @@
             class="transition-all hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Dashboard</a>
         </li>
         <li>
+          {{pegarUser()}}
           <a routerLink="logout"
             class="transition-all lg:border-stone-700 lg:border-l hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Logout</a>
         </li>

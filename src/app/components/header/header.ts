@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
+  constructor(private authService: Auth) {}
+
+
   /**
    * Toggle mobile menu
    */
@@ -55,5 +59,15 @@ export class Header {
       ul.classList.add('opacity-0');
       btn.dataset['navToggled'] = 'false'
     }
+  }
+
+  user: {email: string, user: string} | null = null
+  pegarUser() {
+    const logado = this.authService.isLogged()
+    const usuario = sessionStorage.getItem('auth_user')
+    
+    if (usuario === null) return;
+    this.user = JSON.parse(usuario)
+    console.log(this.user)
   }
 }
