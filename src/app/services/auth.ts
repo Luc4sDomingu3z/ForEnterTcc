@@ -24,7 +24,6 @@ export class Auth {
       return 'Senha incorreta';
     }
 
-    alert('Ta pegando')
     sessionStorage.setItem(this.AUTH_USER, JSON.stringify({
       user: this.user,
       email: this.email
@@ -41,5 +40,13 @@ export class Auth {
     const usuario = sessionStorage.getItem(this.AUTH_USER)
     console.log(usuario)
     return usuario ? true : false
+  }
+
+  pegarUser(): { user: string, email: string } | null {
+    const logado = this.isLogged()
+    const usuario = sessionStorage.getItem('auth_user')
+
+    if (usuario === null) return null;
+    return JSON.parse(usuario)
   }
 }

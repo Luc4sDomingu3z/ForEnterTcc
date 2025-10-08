@@ -1,18 +1,18 @@
 <main class="w-full h-full max-w-[1920px] mx-auto">
   <section class="grid grid-rows-[1fr_auto] lg:grid-rows-none lg:grid-cols-[auto_1fr] min-h-90 lg:min-h-200">
-    <app-navbar class="w-full h-full row-start-2 lg:row-start-1 lg:max-w-10 transition-all hover:max-w-40"></app-navbar>
+    <app-navbar class="w-full h-full row-start-2 lg:row-start-1 lg:max-w-10 lg:hover:max-w-40 transition-all"></app-navbar>
     <div aria-label="Content" class="container mx-auto p-1 py-2">
       <h1 class="w-full text-left text-4xl md:text-5xl p-2 font-bold mb-3 text-slate-600">
         Criação de meta
       </h1>
-      <hr class="border-slate-400" />
+      <!--<hr class="border-slate-400" />-->
 
-      <section class="rounded-md flex gap-2 mt-2 w-full mx-auto">
-        <form class="w-full max-w-5xl p-1" method="post">
+      <section class="rounded-md flex md:flex-nowrap flex-wrap relative gap-2 mt-2 w-full mx-auto">
+        <form class="w-full max-w-5xl p-1" method="post" (submit)="preventSubmit($event)">
           <fieldset>
             <div class="relative pt-2">
-              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full leading-6 ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
-              <label for="meta_name" class="transition-all ease-in text-2xl peer-focus:text-sm peer-valid:text-sm text-neutral-600 absolute left-1 leading-0 top-5">Nomeiar meta</label>
+              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-slate-300 border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required aria-required="da o cu aqui">
+              <label for="meta_name" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Nomeiar meta</label>
             </div>
 
             <!-- <div class="relative pt-2">
@@ -22,28 +22,50 @@
           </fieldset>
 
           <fieldset class="flex gap-2 items-center mt-4" aria-label="Escolher tipo de meta">
+            <legend class="mb-2">Escolha o tipo da meta</legend>
             <div aria-label="Dinheiro">
-              <label for="meta-type-cash" class="transition-all flex items-center gap-2 border-2 border-slate-500 p-1 peer-checked:border-amber-400 peer-checked:bg--400 peer-checked:text-white text-lg w-full max-w-max">
+              <label for="meta-type-cash" class="transition-all flex items-center justify-center gap-2 border md:border-2 border-slate-500 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
                 <input type="radio" name="meta-type" id="meta-type-cash" class="peer" hidden>
-                <span class="block">Dinheiro</span>
-                <div class="flex items-center hidden peer-checked:bg-black">
+                <span class="block pointer-events-none select-none">Dinheiro</span>
+                <span class="transition-all pointer-events-none select-none ease-in items-center flex opacity-0 w-full max-w-0 peer-checked:opacity-100 peer-checked:max-w-30 peer-checked:text-lime-500">
                   <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
-                </div>
+                </span>
               </label>
             </div>
             <div aria-label="Material">
-              <input type="radio" name="meta-type" id="meta-type-material" class="peer" hidden>
-              <label for="meta-type-material" class="transition-all flex items-center gap-2 border-2 border-slate-500 p-1 peer-checked:border-amber-400 peer-checked:bg-slate-400 peer-checked:text-white text-lg w-full max-w-max">
-                <span class="block">Material</span>
-                <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
+              <label for="meta-type-material" class="transition-all flex items-center justify-center gap-2 border md:border-2 border-slate-500 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
+                <input type="radio" name="meta-type" id="meta-type-material" class="peer" hidden>
+                <span class="block pointer-events-none select-none">Material</span>
+                <span class="transition-all pointer-events-none select-none ease-in items-center flex opacity-0 w-full max-w-0 peer-checked:opacity-100 peer-checked:max-w-30 peer-checked:text-lime-500">
+                  <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
+                </span>
               </label>
             </div>
             <div aria-label="Fatura">
-              <input type="radio" name="meta-type" class="peer" id="meta-type-bill" hidden>
-              <label for="meta-type-bill" class="transition-all flex items-center gap-2 border-2 border-slate-500 p-1 peer-checked:bg-slate-400 peer-checked:text-white text-lg w-full max-w-max">
+              <label for="meta-type-bill" class="transition-all flex items-center justify-center gap-2 border md:border-2 border-slate-500 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
+                <input type="radio" name="meta-type" class="peer" id="meta-type-bill" hidden>
                 <span class="block">Fatura</span>
-                <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
+                <span class="transition-all pointer-events-none select-none ease-in items-center flex opacity-0 w-full max-w-0 peer-checked:opacity-100 peer-checked:max-w-30 peer-checked:text-lime-500">
+                  <span class="material-symbols-rounded" style="font-size: 26pt;">check</span>
+                </span>
               </label>
+            </div>
+          </fieldset>
+
+          <!--Se for selecionado DINHEIRO-->
+          <fieldset class="mt-5">
+            <legend>Dinheiro selecionado</legend>
+            <div class="relative pt-2">
+              <input id="meta-valor" name="meta-valor" (keyup)="formatInputCash($event.key, $event)" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-slate-300 border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta-valor" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Digite o valor</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="mt-2">
+            <div class="relative">
+              <button type="button" class="flex items-center justify-center p-1 rounded-sm text-center w-full max-w-30 bg-verdigris text-linen">
+                <span class="block">Terminar</span>
+              </button>
             </div>
           </fieldset>
         </form>

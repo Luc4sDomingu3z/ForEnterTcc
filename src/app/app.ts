@@ -2,6 +2,7 @@ import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { Auth } from './services/auth';
 
 
 @Component({
@@ -10,6 +11,12 @@ import { Footer } from './components/footer/footer';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('meutcc-app');
+  constructor(private authService: Auth) { }
+
+  ngOnInit(): void {
+    this.authService.pegarUser()
+  }
+
 }

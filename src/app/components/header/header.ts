@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Auth } from '../../services/auth';
 
@@ -8,9 +8,13 @@ import { Auth } from '../../services/auth';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
-  constructor(private authService: Auth) {}
+export class Header implements OnInit {
+  constructor(private authService: Auth) { }
 
+  protected user: { user: string, email: string } | null = null
+  ngOnInit(): void {
+    this.user = this.authService.pegarUser()
+  }
 
   /**
    * Toggle mobile menu
@@ -32,10 +36,14 @@ export class Header {
       btn.dataset['navToggled'] = 'true';
       ul?.classList.add('opacity-100');
       ul?.classList.remove('opacity-0');
+      ul?.classList.remove('-z-20!')
+      ul?.classList.remove('max-h-0')
     } else {
       btn.dataset['navToggled'] = 'false';
       ul?.classList.remove('opacity-100');
       ul?.classList.add('opacity-0');
+      ul?.classList.add('-z-20!')
+      ul?.classList.add('max-h-0')
     }
 
     const links: NodeListOf<HTMLAnchorElement> | undefined = ul?.querySelectorAll('a');
@@ -59,15 +67,5 @@ export class Header {
       ul.classList.add('opacity-0');
       btn.dataset['navToggled'] = 'false'
     }
-  }
-
-  user: {email: string, user: string} | null = null
-  pegarUser() {
-    const logado = this.authService.isLogged()
-    const usuario = sessionStorage.getItem('auth_user')
-    
-    if (usuario === null) return;
-    this.user = JSON.parse(usuario)
-    console.log(this.user)
   }
 }
