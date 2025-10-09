@@ -36,14 +36,10 @@ export class Header implements OnInit {
       btn.dataset['navToggled'] = 'true';
       ul?.classList.add('opacity-100');
       ul?.classList.remove('opacity-0');
-      ul?.classList.remove('-z-20!')
-      ul?.classList.remove('max-h-0')
     } else {
       btn.dataset['navToggled'] = 'false';
       ul?.classList.remove('opacity-100');
       ul?.classList.add('opacity-0');
-      ul?.classList.add('-z-20!')
-      ul?.classList.add('max-h-0')
     }
 
     const links: NodeListOf<HTMLAnchorElement> | undefined = ul?.querySelectorAll('a');

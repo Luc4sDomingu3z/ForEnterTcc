@@ -8,10 +8,10 @@
       <!--<hr class="border-slate-400" />-->
 
       <section class="rounded-md flex md:flex-nowrap flex-wrap relative gap-2 mt-2 w-full mx-auto">
-        <form class="w-full max-w-5xl p-1" method="post" (submit)="preventSubmit($event)">
+        <form class="w-full max-w-5xl p-1 flex flex-col gap-5" method="post" (submit)="preventSubmit($event)">
           <fieldset>
             <div class="relative pt-2">
-              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-slate-300 border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required aria-required="da o cu aqui">
+              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required aria-required="da o cu aqui">
               <label for="meta_name" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Nomeiar meta</label>
             </div>
 
@@ -21,10 +21,10 @@
             </div> -->
           </fieldset>
 
-          <fieldset class="flex gap-2 items-center mt-4" aria-label="Escolher tipo de meta">
+          <fieldset class="flex gap-2 items-center" aria-label="Escolher tipo de meta">
             <legend class="mb-2">Escolha o tipo da meta</legend>
             <div aria-label="Dinheiro">
-              <label for="meta-type-cash" class="transition-all flex items-center justify-center gap-2 border md:border-2 border-slate-500 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
+              <label for="meta-type-cash" class="transition-all flex items-center justify-center gap-2 border border-neutral-400 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
                 <input type="radio" name="meta-type" id="meta-type-cash" class="peer" hidden>
                 <span class="block pointer-events-none select-none">Dinheiro</span>
                 <span class="transition-all pointer-events-none select-none ease-in items-center flex opacity-0 w-full max-w-0 peer-checked:opacity-100 peer-checked:max-w-30 peer-checked:text-lime-500">
@@ -33,7 +33,7 @@
               </label>
             </div>
             <div aria-label="Material">
-              <label for="meta-type-material" class="transition-all flex items-center justify-center gap-2 border md:border-2 border-slate-500 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
+              <label for="meta-type-material" class="transition-all flex items-center justify-center gap-2 border border-neutral-400 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
                 <input type="radio" name="meta-type" id="meta-type-material" class="peer" hidden>
                 <span class="block pointer-events-none select-none">Material</span>
                 <span class="transition-all pointer-events-none select-none ease-in items-center flex opacity-0 w-full max-w-0 peer-checked:opacity-100 peer-checked:max-w-30 peer-checked:text-lime-500">
@@ -42,7 +42,7 @@
               </label>
             </div>
             <div aria-label="Fatura">
-              <label for="meta-type-bill" class="transition-all flex items-center justify-center gap-2 border md:border-2 border-slate-500 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
+              <label for="meta-type-bill" class="transition-all flex items-center justify-center gap-2 border border-neutral-400 px-1 md:p-1 text-slate-500 peer-checked:bg-slate-200 text-sm text-center md:text-lg w-full max-w-max">
                 <input type="radio" name="meta-type" class="peer" id="meta-type-bill" hidden>
                 <span class="block">Fatura</span>
                 <span class="transition-all pointer-events-none select-none ease-in items-center flex opacity-0 w-full max-w-0 peer-checked:opacity-100 peer-checked:max-w-30 peer-checked:text-lime-500">
@@ -53,17 +53,57 @@
           </fieldset>
 
           <!--Se for selecionado DINHEIRO-->
-          <fieldset class="mt-5">
-            <legend>Dinheiro selecionado</legend>
+          <fieldset class="relative pt-4">
             <div class="relative pt-2">
-              <input id="meta-valor" name="meta-valor" (keyup)="formatInputCash($event.key, $event)" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-slate-300 border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
+              <input id="meta-valor" name="meta-valor" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
               <label for="meta-valor" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Digite o valor</label>
             </div>
           </fieldset>
+          <!--Se for selecionado DINHEIRO-->
+
+          <!--Se for selecionado MATERIAL-->
+          <fieldset class="relative flex items-start gap-2 flex-wrap">
+            <div class="relative pt-2 grow-2">
+              <input type="text" id="meta-material-name" name="meta-material-name" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta-material-name" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Nome do item</label>
+            </div>
+            <div class="relative pt-2">
+              <input type="text" id="meta-material-valor" name="meta-material-valor" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800  focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta-material-valor" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Preço total do item</label>
+            </div>
+            <div class="relative grow md:grow-0 pt-2 flex flex-col gap-1">
+              <input type="number" min="1" value="0" max="90" id="meta-material-parcelas" name="meta-material-parcelas" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:border-lime-500 valid:rounded-sm invalid:border-rose-400 invalid:pt-4 invalid:rounded-sm invalid:text-rose-500 invalid:font-bold" required>
+              <label for="meta-material-parcelas" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7 peer-invalid:text-sm peer-invalid:top-5 peer-invalid:text-rose-500">Parcelas</label>
+              <span class="bottom-0 left-0 block bg-verdigris border border-gray-500 px-1 rounded-sm text-sm font-mono select-none pointer-events-none">R$ 34,23 </span>
+            </div>
+          </fieldset>
+          <!--Se for selecionado MATERIAL-->
+
+          <!--Se for selecionado FATURA-->
+          <fieldset class="relative flex flex-1 flex-wrap items-start gap-2">
+            <div class="relative pt-2 basis-100 md:basis-200">
+              <input type="text" id="meta-fatura-valor" name="meta-fatura-valor" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta-fatura-valor" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Valor da fatura</label>
+            </div>
+            <div class="relative pt-2 grow md:grow-0">
+              <input type="date" id="meta-fatura-datain" name="meta-fatura-datain" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none text-transparent focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:text-neutral-800 valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta-fatura-datain" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Inicia</label>
+            </div>
+            <div class="relative pt-2 grow md:grow-0">
+              <input type="date" id="meta-fatura-dataout" name="meta-fatura-dataout" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none text-transparent focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:text-neutral-800 valid:border-lime-500 valid:rounded-sm" required>
+              <label for="meta-fatura-dataout" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7">Venc.</label>
+            </div>
+            <div class="relative pt-2 flex flex-col gap-1">
+              <input type="number" min="1" value="0" max="90" id="meta-fatura-parcelas" name="meta-fatura-parcelas" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-slate-500 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md valid:border-lime-500 valid:rounded-sm invalid:border-rose-400 invalid:pt-4 invalid:rounded-sm invalid:text-rose-500 invalid:font-bold" required>
+              <label for="meta-fatura-parcelas" class="transition-all w-full ease-in md:text-2xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-neutral-600 absolute left-1 leading-0 top-7 peer-invalid:text-sm peer-invalid:top-5 peer-invalid:text-rose-500">Parcelas</label>
+              <span class="bottom-0 left-0 block bg-verdigris border border-gray-500 px-1 rounded-sm text-sm font-mono select-none pointer-events-none">R$ 34,23 </span>
+            </div>
+          </fieldset>
+          <!--Se for selecionado FATURA-->
 
           <fieldset class="mt-2">
             <div class="relative">
-              <button type="button" class="flex items-center justify-center p-1 rounded-sm text-center w-full max-w-30 bg-verdigris text-linen">
+              <button type="button" class="flex items-center cursor-pointer justify-center p-1 rounded-sm text-center w-full max-w-30 bg-verdigris text-linen">
                 <span class="block">Terminar</span>
               </button>
             </div>
@@ -71,7 +111,7 @@
         </form>
 
         <div aria-label="Explicando utilizacao" class="bg-vanilla w-full max-w-xl p-2 rounded-md">
-          <h2 class="text-2xl font-thin font-mono text-verdigris">How to use</h2>
+          <h2 class="text-2xl font-thin font-mono text-verdigris">Ajuda</h2>
         </div>
       </section>
     </div>
