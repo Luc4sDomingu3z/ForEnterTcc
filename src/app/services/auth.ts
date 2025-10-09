@@ -38,7 +38,6 @@ export class Auth {
 
   isLogged(): boolean {
     const usuario = sessionStorage.getItem(this.AUTH_USER)
-    console.log(usuario)
     return usuario ? true : false
   }
 

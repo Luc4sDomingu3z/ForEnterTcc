@@ -28,4 +28,34 @@ export class NewmetaDashboard {
       }
     }
   }
+
+  /**
+   * Habilitar campos respectivos da escolha do tipo de meta
+   * @param {Event} e
+   * @returns
+   */
+  protected tipoMeta(e: Event) {
+    if (e.currentTarget === null && e.target === null) return;
+    const label: HTMLLabelElement = e.currentTarget as HTMLLabelElement
+    const input: HTMLInputElement = e.target as HTMLInputElement
+
+    const field = (id: string): null | void => {
+      const el = document.querySelector(`fieldset#field-${id}`) as HTMLFieldSetElement;
+      if (!el) return;
+      el.classList.contains('hidden!') ? el.classList.remove('hidden!') : el.classList.add('hidden!')
+      el.disabled = false
+      const fields = document.querySelectorAll('fieldset')
+      fields.forEach((fl) => {
+        if (fl.id.includes(id) === false && fl.id.includes('field')) {
+          if (!fl.classList.contains('hidden!')) {
+            fl.classList.add('hidden!')
+            fl.disabled = true
+          }
+        }
+      })
+    }
+
+    if (input.checked)
+      field(input?.value)
+  }
 }
