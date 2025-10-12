@@ -1,0 +1,43 @@
+<main class="w-full h-full max-w-[1920px] mx-auto">
+  <section
+    class="grid grid-row-[1fr_auto] lg:grid-rows-none lg:grid-cols-[auto_1fr] min-h-9 lg:min-h-200"
+  >
+    <app-navbar
+      class="w-full h-full row-start-2 lg:row-start-1 lg:max-w-120 lg:hover:max-w-70 transition-all"
+    ></app-navbar>
+
+    <div aria-label="Content" class="container mx-auto p-1 py-2">
+      <h1 class="w-full text-left text-4xl md:text-5xl p-2 font-bold mb-3 text-slate-600">Área de consultas</h1>
+
+      <section class="rounded-md w-full mx-auto mt-2 relative">
+        <div class="max-w-2xl" data-main-table>
+          <section class="w-full">
+            <div class="relative pt-2 w-full">
+              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-gray-400 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md placeholder:opacity-0 focus:placeholder:opacity-100 valid:border-lime-500 valid:rounded-sm" placeholder="Pesquisar meta" required>
+              <label for="meta_name" class="transition-all w-full max-w-max ease-in md:text-xl text-sm peer-focus:text-sm peer-focus:top-4 peer-focus:right-2 peer-focus:left-auto peer-focus:pr-2 peer-valid:text-sm peer-valid:top-2 peer-valid:right-4 peer-valid:text-right text-neutral-600 absolute left-0 leading-0 top-4">
+                <span class="material-symbols-rounded">search</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="w-full grid grid-cols-1 items-start p-1 py-2 grid-rows gap-2 relative min-h-40 mt-2 border-gray-400 border rounded-md">
+            <span class="absolute top-5 left-1/2 text-gray-500 invisible select-none p-1 -translate-x-1/2 mx-auto w-full text-center max-w-max">Nada para ver aqui</span>
+
+            <div class="grid grid-cols-[minmax(50px,90px)_1fr_120px] items-stretch mx-auto max-w-xl w-full items-center p-1 bg-vanilla gap-1 border border-gray-400 rounded-md" aria-label="Meta">
+              <span class="flex items-center text-persian-red p-1 select-all">#0001</span>
+              <span class="flex items-center p-1 select-all text-persian-red text-center justify-center">Geladeira da Brastemp</span>
+              <span class="flex flex-row flex-nowrap gap-1 items-stretch">
+                <button type="button" class="transition-all ease-out cursor-pointer flex items-center justify-center bg-raisin-black text-linen rounded-lg p-1 w-full hover:scale-120 outline outline-transparent active:outline-blue-400 active:scale-110">
+                  <span class="material-symbols-rounded">mystery</span>
+                </button>
+                <button type="button" class="transition-all ease-out cursor-pointer flex items-center justify-center bg-verdigris p-1 rounded-lg text-linen w-full hover:scale-120 active:scale-110 outline outline-transparent active:outline-blue-400">
+                  <span class="material-symbols-rounded">edit_square</span>
+                </button>
+              </span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>

@@ -1,13 +1,13 @@
 <main class="w-full h-full max-w-[1920px] mx-auto">
   <section class="grid grid-rows-[1fr_auto] lg:grid-rows-none lg:grid-cols-[auto_1fr] min-h-90 lg:min-h-200">
-    <app-navbar class="w-full h-full row-start-2 lg:row-start-1 lg:max-w-10 lg:hover:max-w-40 transition-all"></app-navbar>
+    <app-navbar class="w-full h-full row-start-2 lg:row-start-1 lg:max-w-120 lg:hover:max-w-70 transition-all"></app-navbar>
     <div aria-label="Content" class="container mx-auto p-1 py-2">
       <h1 class="w-full text-left text-4xl md:text-5xl p-2 font-bold mb-3 text-slate-600">
         Criação de meta
       </h1>
       <!--<hr class="border-slate-400" />-->
 
-      <section class="rounded-md flex md:flex-nowrap items-start flex-wrap relative gap-2 mt-2 w-full mx-auto">
+      <section class="rounded-md flex md:flex-nowrap items-start overflow-hidden flex-wrap relative gap-2 mt-2 w-full mx-auto">
         <form class="w-full max-w-5xl p-1 flex flex-col gap-5" method="post" (submit)="preventSubmit($event)">
           <fieldset>
             <div class="relative pt-2">
@@ -105,8 +105,57 @@
           </fieldset>
         </form>
 
-        <div aria-label="Explicando utilizacao" class="bg-vanilla w-full max-w-xl p-2 rounded-md">
-          <h2 class="text-2xl font-thin font-mono text-verdigris">Ajuda</h2>
+        <div aria-label="Explicando utilizacao" data-toggled="true" class="transition-all ease-out bg-vanilla w-full h-full max-h-150 sticky bottom-0 md:top-0 max-w-xl p-2 rounded-md overflow-y-auto">
+          <div class="">
+            <h2 class="text-2xl float-left font-thin font-mono text-verdigris select-none">Ajuda</h2>
+            <button type="button" (pointerup)="showTutor($event)" class="text-white bg-persian-red fixed top-20 right-1 flex items-center p-1 rounded-md z-20">Ajuda<span class="material-symbols-rounded">touch_app</span></button>
+          </div>
+
+          <div class="mt-12 text-neutral-500">
+            <p>A criação de metas consiste em 3 tipos:</p>
+            <ol class="list-decimal list-inside mt-1">
+              <li class="text-verdigris text-xl">
+                <span class="text-black text-sm">Dinheiro</span>
+              </li>
+              <li class="text-verdigris text-xl">
+                <span class="text-black text-sm">
+                  Bem material
+                </span>
+              </li>
+              <li class="text-verdigris text-xl"><span class="text-black text-sm">Fatura de qualquer tipo</span></li>
+            </ol>
+
+            <article aria-label="Dinheiro Tutor">
+              <h2 class="text-verdigris py-1 mt-3 text-xl">Dinheiro</h2>
+              <p>
+                Metas monetárias não exigem mais que 2 dados para concluir seu registro. Basta informar campo
+                <code class="bg-verdigris px-1 text-linen select-none pointer-events-none">Digite o valor</code> e a meta estará pronta.
+              </p>
+            </article>
+
+            <article aria-label="Bem material tutor">
+              <h2 class="text-verdigris py-1 mt-3 text-xl">Bem material</h2>
+              <p>
+                O registro para um bem material possui 3 campos obrigatórios e o número de parcelas automaticamente
+                informará o valor parcelado do preço total informado.
+                <br>
+                <span>Campos:</span>
+                <code class="bg-verdigris px-1 text-linen select-none pointer-events-none">Nome do item</code>&nbsp;
+                <code class="bg-verdigris px-1 text-linen select-none pointer-events-none">Preço total</code>&nbsp;
+                <code class="bg-verdigris px-1 text-linen select-none pointer-events-none">Parcelas</code>
+              </p>
+            </article>
+
+            <article aria-label="Fatura">
+              <h2 class="text-verdigris py-1 mt-3 text-xl">Faturas</h2>
+              <p>
+                Ao registrar uma fatura, serão geradas datas de vencimento da fatura até a sua última parcela, por isso, é necessário que seja informado no campo <code class="bg-verdigris px-1 text-linen select-none pointer-events-none">Venc.</code> a data da <strong class="uppercase text-persian-red">Última parcela</strong>.
+              </p>
+              <p>
+                A data de inicio, tem o papel de criar a referência inicial para a primeira parcela.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
     </div>

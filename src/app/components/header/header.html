@@ -11,9 +11,11 @@
     </div>
     <nav class="relative">
       <button (pointerup)="headerNavToggle($event)" data-nav-toggled="false" type="button"
-        class="lg:hidden transition-all focus:bg-white focus:text-black hover:bg-white hover:text-black cursor-pointer rounded-md border aspect-square w-10 flex items-center justify-center rotate-90 text-center">|||</button>
+        class="lg:hidden transition-all outline outline-transparent focus:bg-white focus:text-black hover:bg-white hover:text-black focus:bg-black! focus:text-white focus:border-white focus:outline-white cursor-pointer rounded-md border aspect-square w-10 flex items-center justify-center text-center">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
       <ul
-        class="flex flex-col transition-all ease-in opacity-0 lg:opacity-100 gap-2 overflow-hidden absolute right-0 w-50 max-w-80 bg-raisin-black p-1 lg:p-0 rounded-sm border-1 border-gray-300 translate-y-5 lg:translate-none lg:border-none lg:rounded-none lg:max-w-max lg:w-max lg:flex-row lg:static">
+        class="flex flex-col transition-all ease-in opacity-0 lg:opacity-100 gap-2 overflow-hidden invisible lg:visible absolute right-0 w-50 max-w-80 bg-raisin-black p-1 lg:p-0 rounded-sm border-1 border-gray-300 translate-y-5 lg:translate-none lg:border-none lg:rounded-none lg:max-w-max lg:w-max lg:flex-row lg:static">
         <li>
           <a routerLink="" class="transition-all hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Home</a>
         </li>
@@ -23,11 +25,10 @@
         </li>
         <li>
           <a routerLink="dashboard"
-            class="transition-all hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Dashboard</a>
+            class="transition-all hover:bg-stone-400 lg:pointer-events-auto hover:rounded-sm flex items-center p-1">Dashboard</a>
         </li>
         <li>
-          <a routerLink="logout"
-            class="transition-all lg:border-stone-700 lg:border-l hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Logout</a>
+          <button type="button" (click)="btnLogout($event)" title="Sair da conta" class="transition-all cursor-pointer lg:border-stone-700 lg:border-l hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Logout</button>
         </li>
       </ul>
     </nav>

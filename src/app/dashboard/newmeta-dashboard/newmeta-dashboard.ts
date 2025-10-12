@@ -30,6 +30,31 @@ export class NewmetaDashboard {
   }
 
   /**
+   *  Ativar/Desativar conteiner de ajuda sobre criacao de meta.
+   * @param e
+   * @returns
+   */
+  showTutor(e: Event) {
+    if (e.currentTarget === null) return;
+
+    const btn = e.currentTarget as HTMLButtonElement
+
+    const context: HTMLDivElement | null = btn.parentElement?.parentElement as HTMLDivElement
+
+    if (context === null) return;
+    const css: string[] = ["max-h-[40px]", "overflow-hidden!"]
+
+    if (context.classList.contains('max-h-150')) {
+      context.classList.add(...css)
+      context.classList.remove('max-h-150')
+    } else {
+      context.classList.remove(...css)
+      context.classList.add('max-h-150')
+    }
+  }
+
+
+  /**
    * Habilitar campos respectivos da escolha do tipo de meta
    * @param {Event} e
    * @returns

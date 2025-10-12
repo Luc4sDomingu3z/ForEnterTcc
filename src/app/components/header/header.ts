@@ -31,15 +31,13 @@ export class Header implements OnInit {
     if (btnDataSetArray.length === 0 || btnDataSetArray.includes('navToggled') === false)
       btn.dataset['navToggled'] = 'false';
 
-    console.log('verificando');
-    if (btn.dataset['navToggled'] == 'false') {
-      btn.dataset['navToggled'] = 'true';
-      ul?.classList.add('opacity-100');
-      ul?.classList.remove('opacity-0');
+    console.log(window.origin);
+    if (btn.dataset['navToggled'] === "false") {
+      btn.dataset['navToggled'] = 'true'
+      ul?.classList.add('toggled_header')
     } else {
-      btn.dataset['navToggled'] = 'false';
-      ul?.classList.remove('opacity-100');
-      ul?.classList.add('opacity-0');
+      btn.dataset['navToggled'] = 'false'
+      ul?.classList.remove('toggled_header')
     }
 
     const links: NodeListOf<HTMLAnchorElement> | undefined = ul?.querySelectorAll('a');
@@ -63,5 +61,14 @@ export class Header implements OnInit {
       ul.classList.add('opacity-0');
       btn.dataset['navToggled'] = 'false'
     }
+  }
+
+  /**
+   * Botao de logout
+   */
+  btnLogout(e: Event) {
+    if (e.currentTarget === null) return;
+
+    this.authService.logout()
   }
 }
