@@ -1,0 +1,37 @@
+<main class="w-full h-full max-w-[1920px] mx-auto relative">
+  <section class="w-full mx-auto bg-raisin-black aspect-video lg:min-h-160 lg:aspect-auto" aria-label="Hero section">
+    <form class="p-1 pt-5 max-w-4xl w-full mx-auto" aria-label="Hero container">
+      <h1 class="text-5xl text-center md:text-left p-2 font-bold text-linen">Sua área pessoal</h1>
+      <section class="flex w-full mt-5 flex-row flex-wrap md:flex-nowrap gap-2 h-full">
+        <div class="text-slate-300 cursor-default mx-auto md:mx-0 p-4 flex items-center justify-center rounded-sm max-w-max text-4xl border" aria-label="">
+          <span class="material-symbols-rounded scale-200" style="font-size: 80pt;">person</span>
+        </div>
+        <div class="h-full max-w-full lg:max-w-full mx-auto w-full flex gap-2 flex-wrap justify-center md:justify-start p-2 select-none" aria-label="Area da imagem">
+          <fieldset>
+            <div class="relative pt-2">
+              <input id="user-name" name="user-name" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-gray-400 outline-none text-verdigris focus:border-sky-500 focus:pt-4 valid:pt-4  focus:rounded-md valid:border-blue-500 valid:rounded-sm" value="{{user?.user}}" required>
+              <label for="user-name" class="transition-all w-full ease-in md:text-xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-linen absolute left-1 leading-0 top-7">Nome do usuario</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="relative pt-2">
+              <input id="user-email" name="user-email" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-gray-400 outline-none text-verdigris focus:border-sky-500 focus:pt-4 valid:pt-4  focus:rounded-md valid:border-blue-500 valid:rounded-sm" value="{{user?.email}}" required>
+              <label for="user-email" class="transition-all w-full ease-in md:text-xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-linen absolute left-1 leading-0 top-7">E-mail</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="relative pt-2">
+              <input id="user-senha" name="user-senha" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-gray-400 outline-none text-verdigris focus:border-sky-500 focus:pt-4 valid:pt-4  focus:rounded-md valid:border-blue-500 valid:rounded-sm" required>
+              <label for="user-senha" class="transition-all w-full ease-in md:text-xl text-sm peer-focus:text-sm peer-focus:top-5 peer-valid:text-sm peer-valid:top-5 text-linen absolute left-1 leading-0 top-7">Senha</label>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+      <div class="w-full mt-5 py-3">
+        <button type="button" class="mx-auto cursor-pointer max-w-100 leading-8 transition-all ease-out hover:saturate-10 hover:max-w-70 uppercase font-bold text-center w-full p-1 px-2 flex items-center justify-center gap-2 rounded-full text-vanilla select-none bg-persian-red">
+          <span class="block">Concluir edição</span>
+        </button>
+      </div>
+    </form>
+  </section>
+</main>

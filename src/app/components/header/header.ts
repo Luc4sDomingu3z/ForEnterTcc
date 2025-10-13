@@ -11,6 +11,7 @@ import { Auth } from '../../services/auth';
 export class Header implements OnInit {
   constructor(private authService: Auth) { }
 
+  protected location = window.location.pathname
   protected user: { user: string, email: string } | null = null
   ngOnInit(): void {
     this.user = this.authService.pegarUser()

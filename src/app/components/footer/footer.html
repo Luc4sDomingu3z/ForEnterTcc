@@ -1,36 +1,63 @@
-<footer class="w-full max-w-[1920px] mx-auto grid grid-cols-1 h-full text-vanilla p-1 bg-raisin-black min-h-40 relative">
+<footer
+  class="w-full max-w-[1920px] mx-auto grid grid-cols-1 h-full text-vanilla p-1 bg-raisin-black min-h-40 relative"
+>
   <section class="w-full flex flex-row lg:flex-nowrap flex-wrap lg:items-start gap-1 p-2">
     <div class="grow flex gap-1 flex-wrap">
       <div class="max-w-80 w-full">
-        <h2 class="max-w-max relative select-none py-2 text-3xl ">
+        <h2 class="max-w-max relative select-none py-2 text-3xl">
           Redes
-          <span class="absolute top-0 left-1 rounded-full block w-5 h-2 border border-[#f3dfa2ff]"></span>
-          <span class="absolute bottom-0 right-1 rounded-full bg-vanilla block w-5 h-2 border border-[#f3dfa2ff]"></span>
+          <span
+            class="absolute top-0 left-1 rounded-full block w-5 h-2 border border-[#f3dfa2ff]"
+          ></span>
+          <span
+            class="absolute bottom-0 right-1 rounded-full bg-vanilla block w-5 h-2 border border-[#f3dfa2ff]"
+          ></span>
         </h2>
         <div class="text-linen w-full py-2">
-          <ul class="list-none ">
+          <ul class="list-none">
             <li class="mb-3">
-              <a href="https://github.com/Luc4sDomingu3z" target="_blank" class="group flex max-w-50 w-full items-center gap-1 lg:gap-0 relative">
+              <a
+                href="https://github.com/Luc4sDomingu3z"
+                target="_blank"
+                class="group flex max-w-50 w-full items-center gap-1 lg:gap-0 relative"
+              >
                 <div class="max-w-max">
-                  <img width="40" class="text-white" src="imgs/logo-github.svg" alt="">
+                  <img width="40" class="text-white" src="imgs/logo-github.svg" alt="" />
                 </div>
-                <span class="transition-all lg:invisible whitespace-nowrap text-ellipsis overflow-hidden select-none lg:-translate-x-5 ease-out lg:absolute select-none pointer-events-none right-0 flex items-center p-1 rounded-md bg-vanilla text-raisin-black indent-3 max-w-60 w-full group-hover:indent-4 group-hover:visible lg:group-hover:translate-x-10 font-mono font-bold">Meu Github</span>
+                <span
+                  class="transition-all lg:invisible whitespace-nowrap text-ellipsis overflow-hidden select-none lg:-translate-x-5 ease-out lg:absolute select-none pointer-events-none right-0 flex items-center p-1 rounded-md bg-vanilla text-raisin-black indent-3 max-w-60 w-full group-hover:indent-4 group-hover:visible lg:group-hover:translate-x-10 font-mono font-bold"
+                  >Meu Github</span
+                >
               </a>
             </li>
             <li class="mb-3">
-              <a href="" target="_blank" class="group flex max-w-50 w-full items-center gap-1 lg:gap-0 relative">
+              <a
+                href=""
+                target="_blank"
+                class="group flex max-w-50 w-full items-center gap-1 lg:gap-0 relative"
+              >
                 <div class="max-w-max">
-                  <img width="40" src="/imgs/logo-facebook.svg" class="text-white" alt="">
+                  <img width="40" src="/imgs/logo-facebook.svg" class="text-white" alt="" />
                 </div>
-                <span class="transition-all lg:invisible whitespace-nowrap text-ellipsis overflow-hidden select-none lg:-translate-x-5 ease-out lg:absolute select-none pointer-events-none right-0 flex items-center p-1 rounded-md bg-vanilla text-raisin-black indent-3 max-w-60 w-full group-hover:indent-4 group-hover:visible lg:group-hover:translate-x-10 font-mono font-bold">Ford Facebook</span>
+                <span
+                  class="transition-all lg:invisible whitespace-nowrap text-ellipsis overflow-hidden select-none lg:-translate-x-5 ease-out lg:absolute select-none pointer-events-none right-0 flex items-center p-1 rounded-md bg-vanilla text-raisin-black indent-3 max-w-60 w-full group-hover:indent-4 group-hover:visible lg:group-hover:translate-x-10 font-mono font-bold"
+                  >Ford Facebook</span
+                >
               </a>
             </li>
             <li class="mb-3">
-              <a href="" target="_blank" class="group max-w-50 w-full flex items-center gap-1 lg:gap-0 relative">
+              <a
+                href=""
+                target="_blank"
+                class="group max-w-50 w-full flex items-center gap-1 lg:gap-0 relative"
+              >
                 <div class="max-w-max">
-                  <img width="40" src="/imgs/logo-instagram.svg" class="text-white" alt="">
+                  <img width="40" src="/imgs/logo-instagram.svg" class="text-white" alt="" />
                 </div>
-                <span class="transition-all lg:invisible whitespace-nowrap text-ellipsis overflow-hidden select-none lg:-translate-x-5 ease-out lg:absolute select-none pointer-events-none right-0 flex items-center p-1 rounded-md bg-vanilla text-raisin-black indent-3 max-w-60 w-full group-hover:indent-4 group-hover:visible lg:group-hover:translate-x-10 font-mono font-bold">Ford Instagram</span>
+                <span
+                  class="transition-all lg:invisible whitespace-nowrap text-ellipsis overflow-hidden select-none lg:-translate-x-5 ease-out lg:absolute select-none pointer-events-none right-0 flex items-center p-1 rounded-md bg-vanilla text-raisin-black indent-3 max-w-60 w-full group-hover:indent-4 group-hover:visible lg:group-hover:translate-x-10 font-mono font-bold"
+                  >Ford Instagram</span
+                >
               </a>
             </li>
           </ul>
@@ -38,10 +65,17 @@
       </div>
 
       <div class="max-w-80 w-full">
+        @if (location.includes('/login') === false) {
+
+
         <h2 class="relative py-2 select-none text-3xl max-w-max">
           Shortcuts
-          <span class="absolute top-0 left-1 rounded-full block w-5 h-2 border border-[#f3dfa2ff]"></span>
-          <span class="absolute bottom-0 right-1 rounded-full bg-vanilla block w-5 h-2 border border-[#f3dfa2ff]"></span>
+          <span
+            class="absolute top-0 left-1 rounded-full block w-5 h-2 border border-[#f3dfa2ff]"
+          ></span>
+          <span
+            class="absolute bottom-0 right-1 rounded-full bg-vanilla block w-5 h-2 border border-[#f3dfa2ff]"
+          ></span>
         </h2>
 
         <div class="text-linen w-full py-2">
@@ -50,30 +84,46 @@
               <a routerLink="profile" class="text-xl hover:underline underline-offset-2">Profile</a>
             </li>
             <li>
-              <a routerLink="dashboard" class="text-xl hover:underline underline-offset-2">Meu espaço</a>
+              <a routerLink="dashboard" class="text-xl hover:underline underline-offset-2"
+                >Meu espaço</a
+              >
             </li>
             <li>
               <a routerLink="" class="text-xl hover:underline underline-offset-2">Home</a>
             </li>
           </ul>
         </div>
+        }
       </div>
     </div>
     <div class="flex flex-row flex-wrap md:flex-nowrap gap-2 w-full lg:max-w-[1200px] pt-3">
       <section class="rounded-md border-[#f3dfa250] lg:border-1 p-2">
         <h2 class="relative py-2 select-none text-3xl max-w-max">
           Sua Privacidade
-          <span class="absolute top-0 left-1 rounded-full block w-5 h-2 border border-[#f3dfa2ff]"></span>
-          <span class="absolute bottom-0 right-1 rounded-full bg-vanilla block w-5 h-2 border border-[#f3dfa2ff]"></span>
+          <span
+            class="absolute top-0 left-1 rounded-full block w-5 h-2 border border-[#f3dfa2ff]"
+          ></span>
+          <span
+            class="absolute bottom-0 right-1 rounded-full bg-vanilla block w-5 h-2 border border-[#f3dfa2ff]"
+          ></span>
         </h2>
 
         <div class="mt-2 text-linen w-full">
-          <p>Esse projeto tem como objetivo complementar atividades financeiras domésticas, e não coletar dados sensíveis do usuário como <strong>Conta bancária e dados de sua conta</strong>. </p>
+          <p>
+            Esse projeto tem como objetivo complementar atividades financeiras domésticas, e não
+            coletar dados sensíveis do usuário como
+            <strong>Conta bancária e dados de sua conta</strong>.
+          </p>
         </div>
       </section>
       <section class="rounded-md w-full md:max-w-80 border-[#f3dfa250] lg:border-1 p-2">
         <div class="mt-3">
-          <button type="button" class="outline-none cursor-pointer text-verdigris underline" (pointerup)="privacyDialogEvent($event)" data-privacyDialog-toggle="on">
+          <button
+            type="button"
+            class="outline-none cursor-pointer text-verdigris underline"
+            (pointerup)="privacyDialogEvent($event)"
+            data-privacyDialog-toggle="on"
+          >
             <span>Mais sobre a proteção de dados.</span>
           </button>
         </div>
@@ -84,17 +134,32 @@
     <p>Diretos reservados, Lucas P. Dominguez &copy; 2025 - 2025</p>
   </div>
 
-  <dialog (keydown)="$event.preventDefault()" id="privacyDialog" class="w-full max-w-md bg-raisin-black bottom-0  p-2 shadow-lg rounded-lg z-10 backdrop:bg-neutral-800/50 border border-neutral-400 mx-auto">
+  <dialog
+    (keydown)="$event.preventDefault()"
+    id="privacyDialog"
+    class="w-full max-w-md bg-raisin-black bottom-0 p-2 shadow-lg rounded-lg z-10 backdrop:bg-neutral-800/50 border border-neutral-400 mx-auto"
+  >
     <section class="relative h-full">
-      <button class="text-linen flex items-center justify-center p-1 rounded-md text-xl border-none outline-none" type="button" data-privacyDialog-toggle="off" (pointerup)="privacyDialogEvent($event)">
-        <span class="material-symbols-rounded">
-          close
-        </span>
+      <button
+        class="text-linen flex items-center justify-center p-1 rounded-md text-xl border-none outline-none"
+        type="button"
+        data-privacyDialog-toggle="off"
+        (pointerup)="privacyDialogEvent($event)"
+      >
+        <span class="material-symbols-rounded"> close </span>
       </button>
       <h2 class="text-linen font-bold text-2xl py-1">Leis de privacidade</h2>
       <div class="w-full mt-3 text-vanilla">
-        <p>Esse projeto tem como objetivo complementar atividades financeiras domésticas, e não coletar dados sensíveis do usuário como <strong>Conta bancária e dados de sua conta</strong>. </p>
-        <li class="list-inside mt-4">O projeto não requisita <i>conta bancária</i>, <i>cpf</i>, <i>endereço</i>, ou quaisquer dados que possam comprometer a privacidade do usuário.</li>
+        <p>
+          Seu bem-estar e segurança são nossa prioridade! Neste projeto, não coletamos nenhum dado
+          sensível. As informações que você fornecer são utilizadas somente para o propósito de
+          ajudar você a registrar e monitorar suas metas pessoais.Você não precisa se preocupar com
+          qualquer tipo de comprometimento da sua privacidade.
+        </p>
+        <li class="list-inside mt-4">
+          O projeto não requisita <i>conta bancária</i>, <i>cpf</i>, <i>endereço</i>, ou quaisquer
+          dados que possam comprometer a privacidade do usuário.
+        </li>
       </div>
     </section>
   </dialog>

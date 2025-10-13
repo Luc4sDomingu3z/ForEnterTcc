@@ -1,7 +1,8 @@
 <header class="w-full sticky top-0 z-10 max-w-[1920px] mx-auto text-white bg-raisin-black">
   <section class="flex flex-row max-w-xl px-1 mx-auto justify-between items-center py-2">
     <div id="logo">
-      <span class="block text-2xl">Logo</span>
+      <!--<span class="block text-2xl">Logo</span>-->
+      <a routerLink="" class="flex items-center justify-center"><img width="50"  src="/logo_trs.png" alt=""></a>
       @if (user!== null) {
         <span class="p-1 text-sm font-mono bg-verdigris text-raisin-black rounded-sm flex items-center gap-1">
           <strong class="border-r pr-1">{{user.user}}</strong>
@@ -27,9 +28,17 @@
           <a routerLink="dashboard"
             class="transition-all hover:bg-stone-400 lg:pointer-events-auto hover:rounded-sm flex items-center p-1">Dashboard</a>
         </li>
+        @if (user !== null) {
+
+          <li>
+            <button type="button" (click)="btnLogout($event)" title="Sair da conta" class="transition-all cursor-pointer lg:border-stone-700 lg:border-l hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Logout</button>
+          </li>
+        } @else {
         <li>
-          <button type="button" (click)="btnLogout($event)" title="Sair da conta" class="transition-all cursor-pointer lg:border-stone-700 lg:border-l hover:bg-stone-400 hover:rounded-sm flex items-center p-1">Logout</button>
+          <a routerLink="login"
+            class="transition-all border-l hover:bg-stone-400 lg:pointer-events-auto hover:rounded-sm flex items-center p-1">Login</a>
         </li>
+        }
       </ul>
     </nav>
   </section>

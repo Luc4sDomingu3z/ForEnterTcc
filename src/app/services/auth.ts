@@ -8,13 +8,14 @@ export class Auth {
   private user: string = 'lucas ADM';
   private email: string = 'admin@gmail.com'
   private senha: string = '123456'
+  private privacidade: boolean = false
 
   constructor(private router: Router) { }
 
   // Vamos jogar no SessionStorage
   protected AUTH_USER: string = 'auth_user'
 
-  login(usuario: { email: string, senha: string }) {
+  login(usuario: { email: string, senha: string, privacidade: boolean }) {
     console.log(`Usuario ${usuario.email}`)
     if (!usuario.email.includes(this.email)) {
       return 'E-mail incorreto.'
@@ -22,6 +23,10 @@ export class Auth {
 
     if (!usuario.senha.includes(this.senha)) {
       return 'Senha incorreta';
+    }
+
+    if (!usuario.privacidade) {
+      return 'Aceite os termos de privacidade';
     }
 
     sessionStorage.setItem(this.AUTH_USER, JSON.stringify({

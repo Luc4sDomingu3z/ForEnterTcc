@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 // import { Imagens } from '../../services/imagens';
 
@@ -11,6 +11,8 @@ import { RouterLink } from '@angular/router';
 export class Footer {
 
   // constructor(private imagemService: Imagens) { }
+
+  protected location = window.location.pathname
 
   privacyDialogEvent(e: PointerEvent) {
     e.preventDefault()

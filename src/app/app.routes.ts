@@ -5,6 +5,7 @@ import { HomeDashboard } from './dashboard/home-dashboard/home-dashboard';
 import { NewmetaDashboard } from './dashboard/newmeta-dashboard/newmeta-dashboard';
 import { authGuard } from './guard/auth-guard';
 import { Consultas } from './components/consultas/consultas';
+import { Profile } from './components/profile/profile';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,11 @@ export const routes: Routes = [
     path: '',
     title: 'Página principal',
     component: Home,
+  },
+  {
+    path: 'profile',
+    title: 'Perfil do usuario',
+    component: Profile
   },
   {
     path: 'dashboard',
