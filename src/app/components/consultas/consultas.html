@@ -10,34 +10,107 @@
       <h1 class="w-full text-left text-4xl md:text-5xl p-2 font-bold mb-3 text-slate-600">Área de consultas</h1>
 
       <section class="rounded-md w-full mx-auto mt-2 relative">
-        <div class="max-w-2xl" data-main-table>
+
+
+        <div class="w-full mx-auto" data-main-table>
           <section class="w-full">
             <div class="relative pt-2 w-full">
-              <input id="meta_name" name="meta-name" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-gray-400 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md placeholder:opacity-0 focus:placeholder:opacity-100 valid:border-lime-500 valid:rounded-sm" placeholder="Pesquisar meta" required>
-              <label for="meta_name" class="transition-all w-full max-w-max ease-in md:text-xl text-sm peer-focus:text-sm peer-focus:top-4 peer-focus:right-2 peer-focus:left-auto peer-focus:pr-2 peer-valid:text-sm peer-valid:top-2 peer-valid:right-4 peer-valid:text-right text-neutral-600 absolute left-0 leading-0 top-4">
+              <input id="meta_name" (input)="filterMetas($event)" name="meta-name" type="text" class="transition-all peer h-full ease-out p-1 w-full border border-transparent border-b-gray-400 outline-none focus:border-sky-500 focus:pt-4 valid:pt-4 focus:text-neutral-800 focus:rounded-md placeholder:opacity-0 focus:placeholder:opacity-100 valid:rounded-sm" placeholder="Pesquisar meta" required>
+              <label for="meta_name" class="transition-all w-full max-w-max ease-in md:text-xl text-sm peer-focus:text-sm peer-focus:top-4 peer-focus:right-2 peer-focus:left-auto peer-focus:pr-2 peer-valid:text-sm peer-valid:top-4 peer-valid:right-4 peer-valid:text-right peer-valid:left-auto text-neutral-600 absolute left-0 leading-0 top-4">
                 <span class="material-symbols-rounded">search</span>
               </label>
             </div>
           </section>
 
-          <section class="w-full grid grid-cols-1 items-start p-1 py-2 grid-rows gap-2 relative min-h-40 mt-2 border-gray-400 border rounded-md">
-            <span class="absolute top-5 left-1/2 text-gray-500 invisible select-none p-1 -translate-x-1/2 mx-auto w-full text-center max-w-max">Nada para ver aqui</span>
+          <section id="metasContainer" class="w-full flex flex-row flex-wrap p-1 py-2 relative overflow-y-auto mt-2 border-gray-400 border rounded-md gap-3">
 
-            <div class="grid grid-cols-[minmax(50px,90px)_1fr_120px] items-stretch mx-auto max-w-xl w-full items-center p-1 bg-vanilla gap-1 border border-gray-400 rounded-md" aria-label="Meta">
-              <span class="flex items-center text-persian-red p-1 select-all">#0001</span>
-              <span class="flex items-center p-1 select-all text-persian-red text-center justify-center">Geladeira da Brastemp</span>
-              <span class="flex flex-row flex-nowrap gap-1 items-stretch">
-                <button type="button" class="transition-all ease-out cursor-pointer flex items-center justify-center bg-raisin-black text-linen rounded-lg p-1 w-full hover:scale-120 outline outline-transparent active:outline-blue-400 active:scale-110">
-                  <span class="material-symbols-rounded">mystery</span>
-                </button>
-                <button type="button" class="transition-all ease-out cursor-pointer flex items-center justify-center bg-verdigris p-1 rounded-lg text-linen w-full hover:scale-120 active:scale-110 outline outline-transparent active:outline-blue-400">
-                  <span class="material-symbols-rounded">edit_square</span>
-                </button>
-              </span>
-            </div>
+            @if (Metas.length > 0) {
+              @for (meta of Metas; track meta.id) {
+                <div class="lg:grid lg:grid-cols-[minmax(50px,60px)_1fr_120px] items-stretch lg:max-w-xl md:text-xl items-start p-1 bg-vanilla gap-1 border border-gray-400 rounded-md" aria-label="Meta" title="Geladeira da Brastemp">
+                  <span class="flex items-center text-persian-red p-1 select-all" data-id="{{meta.id}}">#{{meta.id}}</span>
+                  <span class="block items-center overflow-hidden text-ellipsis whitespace-nowrap p-1 select-all text-persian-red text-left justify-center">{{meta.name}}</span>
+                  <span class="flex flex-row flex-nowrap gap-1 items-stretch">
+                    <button type="button" (pointerup)="detailDialog($event)" class="transition-all ease-out cursor-pointer flex items-center justify-center bg-raisin-black text-linen rounded-lg p-1 w-full hover:scale-120 outline outline-transparent active:outline-blue-400 active:scale-110">
+                      <span class="material-symbols-rounded">mystery</span>
+                    </button>
+                    <button type="button" class="transition-all ease-out cursor-pointer flex items-center justify-center bg-verdigris p-1 rounded-lg text-linen w-full hover:scale-120 active:scale-110 outline outline-transparent active:outline-blue-400">
+                      <span class="material-symbols-rounded">edit_square</span>
+                    </button>
+                  </span>
+                </div>
+              }
+            } @else {
+              <span class="absolute top-5 left-1/2 text-gray-500 select-none p-1 -translate-x-1/2 mx-auto w-full text-center max-w-max">Nada para ver aqui</span>
+            }
           </section>
         </div>
       </section>
     </div>
   </section>
+
+  <dialog (keydown)="$event.preventDefault()" id="detailDialog" class="w-full max-w-lg bg-raisin-black top-0 bottom-0 text-vanilla p-2 shadow-lg rounded-lg z-10 backdrop:bg-neutral-800/50 border border-neutral-400 m-auto">
+    <section class="relative h-full">
+      <button class="text-linen flex items-center justify-center p-1 rounded-md text-xl border-none outline-none" id="consulta-close-btn" type="button" data-detailDialog-toggle="off" (pointerup)="detailDialog($event)">
+        <span class="material-symbols-rounded">
+          close
+        </span>
+      </button>
+
+      <div class="w-full mt-2 overflow-y-auto">
+        <h2 class="text-vanilla text-3xl pb-1">Detalhes</h2>
+        <hr>
+
+        @if (metaSelecionada !== null) {
+          <section class="w-full mt-4 text-linen">
+            <h3 class="mb-4 p-1 text-lg text-right border-r-2 uppercase">{{metaSelecionada.name}} <span class="material-symbols-rounded">title</span></h3>
+
+            <table class="w-full mt-1 border-collapse text-vanilla">
+              <tbody>
+                <tr class="border-b *:p-1">
+                  <td class="">ID</td>
+                  <td class="border-l font-bold">#{{metaSelecionada.id}}</td>
+                </tr>
+                <tr class="border-b *:p-1">
+                  <td class="">Valor</td>
+                  <td class="border-l">{{metaSelecionada.valor | currency:'BRL'}}</td>
+                </tr>
+                <tr class="bg-vanilla text-persian-red text- *:p-1">
+                  <td>Tipo</td>
+                  <td class="">{{metaSelecionada.tipo}}</td>
+                </tr>
+                @if (metaSelecionada.tipo === 'Fatura') {
+
+                  <tr class="border-b *:p-1">
+                    <td>Inicio da fatura</td>
+                    <td class="border-l">{{metaSelecionada.dataInicio}}</td>
+                  </tr>
+                  <tr class="border-b *:p-1">
+                    <td>Data de Vencimento</td>
+                    <td class="border-l">{{metaSelecionada.vencimento}}</td>
+                  </tr>
+                }
+
+                @if (metaSelecionada.tipo === 'Material') {
+                  <tr class="border-b *:p-1">
+                    <td>Produto</td>
+                    <td class="border-l">{{metaSelecionada.itemName}}</td>
+                  </tr>
+                  <tr class="border-b *:p-1">
+                    <td>Parcelas</td>
+                    <td class="border-l">{{metaSelecionada.parcelas}}x</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+
+            <h3 class="text-xl mt-4">Progresso atual</h3>
+            <div class="w-full relative rounded-sm h-20 border-2 border-blue-200 mt-3" aria-label="Barra de progresso">
+              <span class="absolute top-1/2 md:text-xl text-sm z-[1] -translate-y-1/2 right-1/2" style="">{{metaSelecionada.progresso}}%</span>
+              <span class="absolute top-0 bottom-0 left-0 bg-sky-400/50" style="width: {{metaSelecionada.progresso}}%;"></span>
+            </div>
+          </section>
+        }
+      </div>
+    </section>
+  </dialog>
 </main>
