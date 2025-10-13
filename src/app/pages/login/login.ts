@@ -16,7 +16,7 @@ export class Login {
 
   usuario: { email: string, senha: string, privacidade: boolean } = {
     email: '',
-    senha: 'merda',
+    senha: '',
     privacidade: false
   }
   mensagemError: string | null = null

@@ -7,11 +7,74 @@
     ></app-navbar>
     <div aria-label="Content" class="container mx-auto p-1 py-2">
       <h1 class="w-full text-left text-4xl md:text-5xl p-2 font-bold mb-3 text-slate-600">
-        Área Inicial
+        Bem-vindo de volta!
       </h1>
       <hr class="border-slate-400" />
-      <section class="max-w-md w-full p-2 border mt-5 border-slate-400 min-h-100 rounded-md">
-        <h2 class="text-3xl">Bem-vindo de volta!</h2>
+      <section class="max-w-full w-full p-2 border mt-5 border-slate-400 rounded-md">
+        <h2 class="text-4xl text-slate-500 pb-3">Dados gerais</h2>
+
+        <article  class="grid lg:grid-cols-2 gap-2 p-2">
+          <div class="w-full max-w-lg relative">
+            <div class="w-full mt-3 flex flex-col justify-between">
+              <div class="">
+                <span class="text-3xl text-center w-full block">Metais totais</span>
+                <span class="text-5xl text-sky-500 mt-5 w-full block text-center font-mono"
+                  >{{totalMetas()}}</span
+                >
+              </div>
+              <a
+                routerLink="/dashboard/see"
+                class="bg-persian-red p-2 mt-3 rounded-md text-vanilla text-center block"
+                >Olhar minhas metas</a
+              >
+            </div>
+          </div>
+
+          <div class="col-1 max-w-lg w-full relative mt-10">
+            <div class="w-full mt-3 flex flex-col justify-between">
+              <div>
+                <span class="text-3xl text-center w-full block">Categorias</span>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th><span class="block rounded-lg text-zinc-500 m-1 p-2">...</span></th>
+                    <th><span class="block rounded-lg text-zinc-500 bg-vanilla p-2 m-1">Fatura</span></th>
+                    <th><span class="block rounded-lg text-zinc-500 bg-vanilla p-2 m-1">Dinheiro</span></th>
+                    <th><span class="block rounded-lg text-zinc-500 bg-vanilla p-2 m-1">Bem Material</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="block rounded-lg text-white text-center bg-slate-500 p-2 m-1">Total</span></td>
+                    <td><span class="block rounded-lg text-white text-center bg-slate-500 p-2 m-1">{{totalMetas(2)}}</span></td>
+                    <td><span class="block rounded-lg text-white text-center bg-slate-500 p-2 m-1">{{totalMetas(1)}}</span></td>
+                    <td><span class="block rounded-lg text-white text-center bg-slate-500 p-2 m-1">{{totalMetas(3)}}</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="lg:col-2 lg:row-start-1 mt-4 lg:mt-0 row-span-2 p-2 w-full max-w-full rounded-lg border border-slate-400">
+            <div class="w-full flex flex-col justify-between">
+              <div>
+                <span class="text-3xl text-left w-full block">Progressos</span>
+              </div>
+              <div class="mt-5">
+                <div class=" flex flex-col gap-2">
+                  @for (pr of maiorProgresso()?.slice(0,5);track pr.id) {
+                  <span class="flex gap-1 overflow-hidden rounded items-center justify-between w-full max-w-md px-2 py-1 relative">
+                    <span class="block text-black rounded">#{{pr.id}}</span>
+                    <span class="block">{{pr.pr}}%</span>
+                    <span class="absolute top-0 left-0 bottom-0 bg-persian-red -z-1" style="width: {{pr.pr}}%;"></span>
+                  </span>
+                  }
+                </div>
+              </div>
+            </div>
+          </aside>
+        </article>
       </section>
     </div>
   </section>

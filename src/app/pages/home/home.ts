@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js";
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,17 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
+export class Home implements AfterViewInit {
+  constructor(private cdr: ChangeDetectorRef) { }
+
+  ngAfterViewInit(): void {
+    this.reloadComponent()
+  }
+
+  reloadComponent() {
+    this.cdr.detectChanges()
+  }
+
   /**
    * Secao de explicaoes
    */

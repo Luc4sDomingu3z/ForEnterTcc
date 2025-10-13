@@ -18,15 +18,17 @@
     https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
     "></script>
     <script>
-    document.addEventListener( 'DOMContentLoaded', function() {
-      var splide = new Splide( '.splide', {
-        autoplay: true,
-        rewind: true,
-        interval: 3501,
-        speed: 1000,
-      } );
-      splide.mount();
-    } );
+      document.addEventListener('DOMContentLoaded', (e) => {
+        if (window.location.pathname === '' || window.location.pathname === '/') {
+          const splide = new Splide('.splide', {
+            autoplay: true,
+            rewind: true,
+            interval: 3501,
+            speed: 1000,
+          });
+          splide.mount();
+        }
+      });
     </script>
   </body>
 </html>

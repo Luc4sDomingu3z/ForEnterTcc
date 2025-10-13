@@ -21,27 +21,29 @@ export const routes: Routes = [
   {
     path: 'profile',
     title: 'Perfil do usuario',
-    component: Profile
+    component: Profile,
   },
   {
     path: 'dashboard',
     title: 'Dashboard Inicio',
     component: HomeDashboard,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
   },
   {
     path: 'dashboard/home',
     pathMatch: 'full',
-    redirectTo: 'dashboard'
+    redirectTo: 'dashboard',
   },
   {
     path: 'dashboard/new',
     title: 'Nova meta',
     component: NewmetaDashboard,
+    canActivate: [authGuard],
   },
   {
     path: 'dashboard/see',
     title: 'Ver as metas',
-    component: Consultas
-  }
+    component: Consultas,
+    canActivate: [authGuard],
+  },
 ];
